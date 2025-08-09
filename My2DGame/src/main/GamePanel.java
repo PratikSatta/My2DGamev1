@@ -8,11 +8,9 @@ import java.awt.Graphics2D;
 import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.image.BufferedImage;
-import java.lang.classfile.instruction.NewMultiArrayInstruction;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 
 import javax.swing.JPanel;
 
@@ -20,6 +18,7 @@ import ai.PathFinder;
 import entity.Entity;
 import entity.Player;
 import environment.EnvironmentManager;
+import tile.Maps;
 import tile.TileManager;
 import tile_interactive.InteractiveTile;
 
@@ -36,8 +35,8 @@ public class GamePanel  extends JPanel implements Runnable{
 	public final int screenHeight = tileSize * maxScreenRow; //576 pixels
 	
 	//WORLD SETTINGS
-	public final int maxWorldCol = 50;
-	public final int maxWorldRow = 50;
+	public int maxWorldCol;
+	public int maxWorldRow;
 	public final int worldWidth = tileSize * maxWorldCol;
 	public final int worldHeight = tileSize * maxWorldRow;
 	public final int maxMap = 10;
@@ -67,6 +66,7 @@ public class GamePanel  extends JPanel implements Runnable{
 	Config config = new Config(this);
 	public PathFinder pFinder = new PathFinder(this);
 	EnvironmentManager environmentManager = new EnvironmentManager(this);
+	Maps map = new Maps(this);
 	Thread gameThread;
 	
 	//ENTITY AND OBJECT
@@ -92,6 +92,7 @@ public class GamePanel  extends JPanel implements Runnable{
 	public final int transitionState = 7;
 	public final int tradeState = 8;
 	public final int sleepState = 9;
+	public final int mapState = 10;
 	
 	
 	public GamePanel() {
@@ -290,6 +291,10 @@ public class GamePanel  extends JPanel implements Runnable{
 		if (gameState == titleState) {
 			ui.draw(g2);
 		}
+		//MAP SCREEN
+		else if (gameState == mapState) {
+			map.drawFullMapScreen(g2);
+		}
 		//OTHERs
 		
 		else {
@@ -358,6 +363,9 @@ public class GamePanel  extends JPanel implements Runnable{
 			
 			//ENVIRONMENT
 			environmentManager.draw(g2);
+			
+			//MINI MAP
+			map.drawMiniMap(g2);
 			
 			//UI
 			ui.draw(g2);

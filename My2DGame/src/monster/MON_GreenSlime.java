@@ -61,12 +61,12 @@ public class MON_GreenSlime extends Entity{
 		
 		if (onPath == false && tileDistance < 5) {
 			
-			int i = new Random().nextInt(100)+1;
-			if (i > 50) {
+			int i = new Random().nextInt(1000)+1;
+			if (i > 500) {
 				onPath = true;
 			}
 		}
-		if (onPath == true && tileDistance > 20) {
+		if (onPath == true && tileDistance > 15) {
 			onPath = false;
 		}
 	}

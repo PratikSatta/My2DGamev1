@@ -5,14 +5,10 @@ import entity.NPC_OldMan;
 import monster.MON_GreenSlime;
 import object.OBJ_Axe;
 import object.OBJ_Chest;
-import object.OBJ_Coin_Bronze;
 import object.OBJ_Door;
-import object.OBJ_Heart;
 import object.OBJ_Key;
 import object.OBJ_Lantern;
-import object.OBJ_ManaCrystal;
 import object.OBJ_Potion_Red;
-import object.OBJ_Shield_Blue;
 import object.OBJ_Tent;
 import tile_interactive.IT_DryTree;
 
@@ -55,8 +51,8 @@ public class AssetSetter {
 		i++;
 		
 		gp.obj[mapNum][i] = new OBJ_Chest(gp, new OBJ_Key(gp));
-		gp.obj[mapNum][i].worldX = gp.tileSize*26;
-		gp.obj[mapNum][i].worldY = gp.tileSize*7;
+		gp.obj[mapNum][i].worldX = gp.tileSize*30;
+		gp.obj[mapNum][i].worldY = gp.tileSize*29;
 		i++;
 		
 		gp.obj[mapNum][i] = new OBJ_Potion_Red(gp);
@@ -137,5 +133,14 @@ public class AssetSetter {
 		gp.iTile[mapNum][i] = new IT_DryTree(gp,11,41);i++;
 		gp.iTile[mapNum][i] = new IT_DryTree(gp,10,41);i++;
 		gp.iTile[mapNum][i] = new IT_DryTree(gp,10,40);i++;
+		gp.iTile[mapNum][i] = new IT_DryTree(gp,29,31);i++;
+		gp.iTile[mapNum][i] = new IT_DryTree(gp,28,31);i++;
+		gp.iTile[mapNum][i] = new IT_DryTree(gp,27,31);i++;
+		gp.iTile[mapNum][i] = new IT_DryTree(gp,27,30);i++;
+		gp.iTile[mapNum][i] = new IT_DryTree(gp,27,29);i++;
+		gp.iTile[mapNum][i] = new IT_DryTree(gp,27,28);i++;
+		gp.iTile[mapNum][i] = new IT_DryTree(gp,27,27);i++;
+		gp.iTile[mapNum][i] = new IT_DryTree(gp,26,27);i++;
+		gp.iTile[mapNum][i] = new IT_DryTree(gp,25,27);i++;
 	}
 }
