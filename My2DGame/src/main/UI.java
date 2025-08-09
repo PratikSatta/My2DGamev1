@@ -133,6 +133,9 @@ public class UI {
 		if (gp.gameState == gp.tradeState) {
 			drawTradeState();
 		}
+		if (gp.gameState == gp.sleepState) {
+			drawSleepScreen();
+		}
 	}
 	
 	public void drawPlayerLife() {
@@ -973,6 +976,27 @@ public class UI {
 		} 
 	}
 
+	public void drawSleepScreen() {
+		
+		counter++;
+		if (counter < 120) {
+		    gp.environmentManager.lighting.filterAlpha += 0.01f;
+		    if (gp.environmentManager.lighting.filterAlpha > 1f) {
+		    	gp.environmentManager.lighting.filterAlpha = 1f;
+			}
+		}
+		if (counter >= 120) {
+			gp.environmentManager.lighting.filterAlpha -= 0.01f;
+			if (gp.environmentManager.lighting.filterAlpha <= 0) {
+				gp.environmentManager.lighting.filterAlpha = 0f;
+				counter = 0;
+				gp.environmentManager.lighting.dayState = gp.environmentManager.lighting.day;
+				gp.environmentManager.lighting.dayCounter = 0;
+				gp.gameState = gp.playState;
+				gp.player.getPlayerImage();
+			}
+		}
+	}
 	public int getItemIndexOnSlot(int slotCol,int slotRow) {
 		int itemIndex = slotCol + (slotRow*5);
 		return itemIndex;
