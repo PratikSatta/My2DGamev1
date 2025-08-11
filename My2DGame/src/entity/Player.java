@@ -96,6 +96,10 @@ public class Player extends Entity{
 		worldY =gp.tileSize * 21;
 		direction = "down";
 	}
+	public void setDialogue() {
+		 dialogues[0][0] = "You are level  " + level + "!\n"
+				 +"You feel power awakening inside you!";
+	}
 	
 	public void restoreStatus() {
 		
@@ -430,7 +434,6 @@ public class Player extends Entity{
 		if (gp.keyH.enterPressed == true) {
 			if(index != 999) {
 				attackCancelled = true;
-				gp.gameState = gp.dialogueState;
 				gp.npc[gp.currentMap][index].speak();	
 			}
 		}
@@ -536,10 +539,9 @@ public class Player extends Entity{
 			 
 			 gp.playSE(8);
 			 gp.gameState = gp.dialogueState;
-			 gp.ui.currentDialogue = "You are level  " + level + "!\n"
-					 +"You feel power awakening inside you!";
-			 
 			 exp = remainingExp;
+			 setDialogue();
+			 startDialogue(this, 0);
 		}
 	}
 	

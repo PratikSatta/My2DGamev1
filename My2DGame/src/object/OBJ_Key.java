@@ -19,21 +19,26 @@ public class OBJ_Key extends Entity{
 		description = "[" + name + "]\nOpens a door somewhere.";
 		price = 100;
 		stackable = true;
+		
+		setDialogue();
 	}
+	public void setDialogue() {
+		dialogues[0][0] = "You used " + name + "and opened the door";;
+		dialogues[1][0] = "What are you doing?";
+	}
+	
 	public boolean use(Entity entity) {
-		
-		gp.gameState = gp.dialogueState;
-		
+				
 		int objIndex = getDetected(entity, gp.obj, "Door");
 		
 		if (objIndex != 999) {
-			gp.ui.currentDialogue = "You used " + name + "and opened the door";
+			startDialogue(this, 0);
 			gp.playSE(3);
 			gp.obj[gp.currentMap][objIndex] = null;
 			return true;
 		}
 		else {
-			gp.ui.currentDialogue = "What are you doing?";
+			startDialogue(this, 1);
 			return false;
 		}
 	}
