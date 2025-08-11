@@ -50,6 +50,8 @@ public class Entity {
 	public boolean guarding = false;
 	public boolean transparent = false;
 	public boolean offBalance = false;
+	public Entity loot;
+	public boolean opened = false;
 	
 	//COUNTERS
 	public int spriteCounter = 0;
@@ -159,6 +161,10 @@ public class Entity {
 		int goalRow = (gp.player.worldY + gp.player.solidArea.y)/gp.tileSize;
 		return goalRow;
 	}
+	public void setLoot(Entity loot) {
+		
+	}
+	
 	public void setAction() {
 		
 	}
@@ -772,10 +778,10 @@ public BufferedImage setup(String imagePath, int width, int height) {
     	int nextWorldY = user.getTopY();
     	
     	switch(user.direction) {
-    	case "up" : nextWorldY = user.getTopY()-user.speed; break;
-    	case "down" : nextWorldY = user.getBottomY()+user.speed; break;
-    	case "left" : nextWorldX = user.getLeftX()-user.speed; break;
-    	case "right" : nextWorldX = user.getRightX()+user.speed; break;
+    	case "up" : nextWorldY = user.getTopY()-gp.player.speed; break;
+    	case "down" : nextWorldY = user.getBottomY()+gp.player.speed; break;
+    	case "left" : nextWorldX = user.getLeftX()-gp.player.speed; break;
+    	case "right" : nextWorldX = user.getRightX()+gp.player.speed; break;
     	}
     	int col = nextWorldX/gp.tileSize;
     	int row = nextWorldY/gp.tileSize;
