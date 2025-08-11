@@ -25,6 +25,7 @@ public class MON_Orc extends Entity{
 		attack = 8;
 		defense = 2;
 		exp = 10;
+		knockBackPower = 5;
 		
 		solidArea.x = 4;
 		solidArea.y = 4;
@@ -84,7 +85,7 @@ public class MON_Orc extends Entity{
 
 		//CHECK IF ATTACKING
 		if (attacking == false) {
-			checkAttackOrNot(30, gp.tileSize*4, gp.tileSize);
+			checkAttackOrNot(50, gp.tileSize*4, gp.tileSize);
 		}
 	}
 	
