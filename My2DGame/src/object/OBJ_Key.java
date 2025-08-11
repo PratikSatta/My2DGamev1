@@ -23,7 +23,7 @@ public class OBJ_Key extends Entity{
 		setDialogue();
 	}
 	public void setDialogue() {
-		dialogues[0][0] = "You used " + name + "and opened the door";;
+		dialogues[0][0] = "You used a" + name + " and opened the door";
 		dialogues[1][0] = "What are you doing?";
 	}
 	

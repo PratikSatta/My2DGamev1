@@ -443,6 +443,7 @@ public class GamePanel  extends JPanel implements Runnable{
 			if (nextArea == dungeon) {
 				playMusic(19);
 			}
+			assetSetter.setNPC();
 		}
 		
 		currentArea = nextArea;
