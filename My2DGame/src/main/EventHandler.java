@@ -103,18 +103,17 @@ public class EventHandler {
 	}
 	
 	public void healingPool(int gameState) {
-		if(gp.player.life < gp.player.maxLife || gp.player.mana < gp.player.maxMana) {
 			
 			if (gp.keyH.enterPressed == true) {
 				gp.gameState = gameState;
 				gp.player.attackCancelled = true;
 				gp.playSE(2);
-				gp.ui.currentDialogue = "Something mysterious healed you.";
+				gp.ui.currentDialogue = "Something mysterious healed you...\n" + "(The progress has been saved.)";
 				gp.player.life = gp.player.maxLife;
 				gp.player.mana = gp.player.maxMana;
 				gp.assetSetter.setMonster();
+				gp.saveLoad.save();
 			}
-		}
 	}
 	
 	public void teleport(int map, int col, int row) {
