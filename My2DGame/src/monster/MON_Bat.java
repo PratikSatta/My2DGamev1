@@ -18,6 +18,7 @@ public class MON_Bat extends Entity{
 		
 		type = type_monster;
 		name = "Bat";
+		sleep = false;
 		defaultSpeed = 7;
 		speed = defaultSpeed;
 		maxLife = 7;
