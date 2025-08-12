@@ -91,7 +91,7 @@ public class CollisionChecker {
 				gp.obj[gp.currentMap][i].solidArea.x = gp.obj[gp.currentMap][i].worldX + gp.obj[gp.currentMap][i].solidArea.x;
 				gp.obj[gp.currentMap][i].solidArea.y = gp.obj[gp.currentMap][i].worldY + gp.obj[gp.currentMap][i].solidArea.y;
 				
-				switch(entity.direction) {
+				switch(direction) {
 				case "up":
 					entity.solidArea.y -= entity.speed;
 					break;
