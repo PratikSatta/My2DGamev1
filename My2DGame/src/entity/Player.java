@@ -59,8 +59,8 @@ public class Player extends Entity{
 		
 // 	    worldX =gp.tileSize * 23;
 //     	worldY =gp.tileSize * 21;
-	    worldX =gp.tileSize * 23;
-		worldY =gp.tileSize * 21;
+	    worldX =gp.tileSize * 25;
+		worldY =gp.tileSize * 30;
 		gp.currentMap = 3;
 		defaultSpeed = 4;
 		speed=defaultSpeed;
@@ -720,7 +720,10 @@ public class Player extends Entity{
 			g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 0.3F));
 		}
 		
-		g2.drawImage(image, tempScreenX, tempScreenY,null);
+		if (drawing == true) {
+			
+			g2.drawImage(image, tempScreenX, tempScreenY,null);
+		}
 		
 		//RESET ALPHA(OPACITY)
 		g2.setComposite(AlphaComposite.getInstance(AlphaComposite.SRC_OVER, 1F));
