@@ -8,7 +8,7 @@ public class KeyHandler implements KeyListener{
 	GamePanel gp;
 	public boolean upPressed, downPressed, leftPressed, rightPressed, enterPressed,shotKeyPressed, spacePressed;
 	boolean showDebugText = false;
-	
+	public boolean godModeOn = false;
 	@Override
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
@@ -165,12 +165,20 @@ public class KeyHandler implements KeyListener{
 			}
 		}
 		
-		if (code == KeyEvent.VK_T) {
+		if (code == KeyEvent.VK_R) {
 			switch(gp.currentMap) {
 			case 0: gp.tileM.loadMap("/maps/worldmap.txt", 0); break;
 			case 1: gp.tileM.loadMap("/maps/indoor01.txt", 0); break;
 			}
 
+		}
+		if (code == KeyEvent.VK_G) {
+			if (godModeOn == false) {
+				godModeOn = true;
+			}
+			else if (godModeOn == true) {
+				godModeOn  = false;
+			}
 		}
 	}
 	
