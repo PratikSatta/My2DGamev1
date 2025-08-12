@@ -57,22 +57,22 @@ public class Player extends Entity{
 	
 	public void setDefaultValues() {
 		
- 	    worldX =gp.tileSize * 23;
-     	worldY =gp.tileSize * 21;
-//	    worldX =gp.tileSize * 40;
-//		worldY =gp.tileSize * 40;
-		gp.currentMap = 0;
+// 	    worldX =gp.tileSize * 23;
+//     	worldY =gp.tileSize * 21;
+	    worldX =gp.tileSize * 23;
+		worldY =gp.tileSize * 21;
+		gp.currentMap = 3;
 		defaultSpeed = 4;
-		speed=4;
+		speed=defaultSpeed;
 		direction = "down";
 		
 		// PLAYER STATUS
 		level = 1;
-		maxLife = 6;
+		maxLife = 28;
 		life = maxLife;
-		strength = 1;  //The more strength he has, the more damage he gives
+		strength = 5;  //The more strength he has, the more damage he gives
 		dexterity = 1; //The more dexterity he has, the less damage he receives
-		maxMana = 4;
+		maxMana = 10;
 		mana = maxMana;
 		
 		exp = 0;
@@ -91,6 +91,7 @@ public class Player extends Entity{
 	}
 	
 	public void setDefaultPosition() {
+		gp.currentMap = 0;
 		 
 	    worldX =gp.tileSize * 23;
 		worldY =gp.tileSize * 21;
@@ -395,11 +396,14 @@ public class Player extends Entity{
 		if (life > maxLife) {
 			life = maxLife;
 		}
-		if (life <= 0 ) {
-			gp.gameState = gp.gameOverState;
-			gp.ui.commandNum = -1;
-			gp.playSE(12);
+		if (keyH.godModeOn == false) {
 			
+			if (life <= 0 ) {
+				gp.gameState = gp.gameOverState;
+				gp.ui.commandNum = -1;
+				gp.playSE(12);
+				
+			}
 		}
 	}
 	
