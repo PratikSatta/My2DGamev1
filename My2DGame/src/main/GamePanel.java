@@ -11,7 +11,6 @@ import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Iterator;
 
 import javax.swing.JPanel;
 
@@ -175,39 +174,6 @@ public class GamePanel  extends JPanel implements Runnable{
 		gameThread= new Thread(this);
 		gameThread.start();
 	}
-
-	@Override
-//	public void run() {
-//		
-//		double drawInterval= 1000000000/FPS; //0.01666 second
-//		double nextDrawTime = System.nanoTime() + drawInterval;
-//		
-//		while(gameThread != null) {
-//						
-//			//UPDATE : Update Information such as character positions
-//			update();
-//			
-//			//DRAW: draw the screen with updated information
-//			repaint();
-//			try {
-//			double remainingTime= nextDrawTime - System.nanoTime();
-//			remainingTime= remainingTime/1000000;
-//			
-//			if (remainingTime<0) {
-//				remainingTime = 0;
-//			}
-//			
-//			Thread.sleep((long)remainingTime);
-//			
-//			nextDrawTime += drawInterval;
-//			
-//			}
-//			catch (Exception e) {
-//				e.printStackTrace();
-//			}
-//		}
-//	}
-	
 	
 	public void run() {
 		

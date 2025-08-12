@@ -1,20 +1,12 @@
 package entity;
 
 import java.awt.AlphaComposite;
-import java.awt.Color;
-import java.awt.Font;
 import java.awt.Graphics2D;
 import java.awt.Rectangle;
 import java.awt.image.BufferedImage;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Iterator;
-
-import javax.imageio.ImageIO;
 
 import main.GamePanel;
 import main.KeyHandler;
-import main.UtilityTool;
 import object.OBJ_Axe;
 import object.OBJ_Fireball;
 import object.OBJ_Key;
@@ -57,22 +49,22 @@ public class Player extends Entity{
 	
 	public void setDefaultValues() {
 		
-// 	    worldX =gp.tileSize * 23;
-//     	worldY =gp.tileSize * 21;
-	    worldX =gp.tileSize * 25;
-		worldY =gp.tileSize * 30;
-		gp.currentMap = 3;
+ 	    worldX =gp.tileSize * 23;
+     	worldY =gp.tileSize * 21;
+//	    worldX =gp.tileSize * 25;
+//		worldY =gp.tileSize * 9;
+		gp.currentMap = 0;
 		defaultSpeed = 4;
 		speed=defaultSpeed;
 		direction = "down";
 		
 		// PLAYER STATUS
 		level = 1;
-		maxLife = 28;
+		maxLife = 6;
 		life = maxLife;
-		strength = 5;  //The more strength he has, the more damage he gives
+		strength = 1;  //The more strength he has, the more damage he gives
 		dexterity = 1; //The more dexterity he has, the less damage he receives
-		maxMana = 10;
+		maxMana = 3;
 		mana = maxMana;
 		
 		exp = 0;

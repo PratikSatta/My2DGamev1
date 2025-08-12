@@ -5,7 +5,6 @@ import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
-import java.util.Iterator;
 
 import main.GamePanel;
 
@@ -72,7 +71,7 @@ public class SaveLoad {
 			
 			//Write the DataStorage object
 			oos.writeObject(dataStorage);
-			
+			oos.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -129,6 +128,7 @@ public class SaveLoad {
 					}
 				}
 			}
+			ois.close();
 		} 
 		catch (Exception e) {
 			System.out.println("Load Exception");

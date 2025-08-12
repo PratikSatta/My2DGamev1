@@ -10,6 +10,7 @@ import monster.MON_Orc;
 import monster.MON_RedSlime;
 import monster.MON_SkeletonLord;
 import object.OBJ_Axe;
+import object.OBJ_BlueHeart;
 import object.OBJ_Chest;
 import object.OBJ_Door;
 import object.OBJ_Door_Iron;
@@ -113,6 +114,10 @@ public class AssetSetter {
 			i++;
 		}
 
+		gp.obj[mapNum][i] = new OBJ_BlueHeart(gp);
+		gp.obj[mapNum][i].worldX = gp.tileSize*25;
+		gp.obj[mapNum][i].worldY = gp.tileSize*8;
+		i++;
 	}
 	
 	public void setNPC() {

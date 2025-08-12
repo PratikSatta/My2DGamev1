@@ -2,8 +2,6 @@ package entity;
 
 import java.awt.Rectangle;
 import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.Random;
 
 import main.GamePanel;
 import object.OBJ_Door_Iron;
