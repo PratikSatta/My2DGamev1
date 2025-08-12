@@ -1,5 +1,6 @@
 package main;
 
+import data.Progress;
 import entity.NPC_BigRock;
 import entity.NPC_Merchant;
 import entity.NPC_OldMan;
@@ -101,6 +102,17 @@ public class AssetSetter {
 		gp.obj[mapNum][i].worldX = gp.tileSize*18;
 		gp.obj[mapNum][i].worldY = gp.tileSize*23;
 		i++;
+		
+		mapNum = 3;
+		i++;
+		if (Progress.skeletonLordDefeated == false) {
+			
+			gp.obj[mapNum][i] = new OBJ_Door_Iron(gp);
+			gp.obj[mapNum][i].worldX = gp.tileSize*25;
+			gp.obj[mapNum][i].worldY = gp.tileSize*15;
+			i++;
+		}
+
 	}
 	
 	public void setNPC() {
